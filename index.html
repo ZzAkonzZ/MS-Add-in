@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Controls Add-in Test</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Скрипт инициализации Office.js -->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>Project Controls</h3>
+            <span class="badge">PoC Test</span>
+        </header>
+
+        <main>
+            <p class="description">Проверка среды выполнения и контекста учетной записи:</p>
+
+            <button id="btnCheckProfile" class="btn-primary">Получить профиль</button>
+
+            <div id="outputCard" class="card hidden">
+                <div class="field">
+                    <label>Пользователь / Хост:</label>
+                    <div id="userName" class="value">—</div>
+                </div>
+                <div class="field">
+                    <label>Платформа:</label>
+                    <div id="userPlatform" class="value">—</div>
+                </div>
+                <div class="field">
+                    <label>Диагностика SSO:</label>
+                    <div id="userToken" class="value code-block">—</div>
+                </div>
+            </div>
+
+            <div id="statusMessage" class="status"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
