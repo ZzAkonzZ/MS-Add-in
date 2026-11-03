@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- Скрипт инициализации Office.js -->
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <!-- MSAL (локальная копия @azure/msal-browser 4.12.0) — нужна только для входа через Entra ID (NAA) -->
+    <script src="lib/msal-browser.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,17 +24,37 @@
 
             <div id="outputCard" class="card hidden">
                 <div class="field">
-                    <label>Пользователь / Хост:</label>
+                    <label>ФИО:</label>
                     <div id="userName" class="value">—</div>
                 </div>
                 <div class="field">
-                    <label>Платформа:</label>
+                    <label>Почта:</label>
+                    <div id="userEmail" class="value">—</div>
+                </div>
+                <div class="field">
+                    <label>Источник:</label>
+                    <div id="userSource" class="value">—</div>
+                </div>
+                <div class="field">
+                    <label>Хост / платформа:</label>
                     <div id="userPlatform" class="value">—</div>
                 </div>
                 <div class="field">
-                    <label>Диагностика SSO:</label>
-                    <div id="userToken" class="value code-block">—</div>
+                    <label>Диагностика:</label>
+                    <div id="diagLog" class="value code-block">—</div>
                 </div>
+            </div>
+
+            <div id="manualForm" class="card hidden">
+                <div class="field">
+                    <label for="manualName">ФИО:</label>
+                    <input id="manualName" type="text" autocomplete="name">
+                </div>
+                <div class="field">
+                    <label for="manualEmail">Почта:</label>
+                    <input id="manualEmail" type="email" autocomplete="email">
+                </div>
+                <button id="btnSaveManual" class="btn-primary">Сохранить</button>
             </div>
 
             <div id="statusMessage" class="status"></div>

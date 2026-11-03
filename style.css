@@ -106,3 +106,18 @@ h3 {
     color: #a4262c;
     min-height: 16px;
 }
+.status.ok { color: #107c10; }
+.status.info { color: #605e5c; }
+.status.warn { color: #a4262c; }
+
+.field input {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 13px;
+    border: 1px solid #8a8886;
+    border-radius: 4px;
+}
+
+.code-block {
+    white-space: pre-wrap;
+}
