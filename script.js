@@ -42,7 +42,7 @@ async function checkProfile() {
             }).join(''));
 
             const userData = JSON.parse(jsonPayload);
-            userName.innerText = `${userData.name || userData.preferred_username || "Авторизован"} (${userData.upn || userData.email || ""})`;
+            userName.innerText = `${userData.name || userData.preferred_username || "Авторизован"} (${userData.preferred_username || userData.upn || userData.email || ""})`;
             userToken.innerText = JSON.stringify(userData, null, 2);
             showStatus("SSO профиль успешно определен!");
         } else {
